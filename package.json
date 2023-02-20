@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gatsby-composable",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Composable build and Modular design",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Eric Phifer <eric@ericphiferllc.com>",
   "dependencies": {
     "gatsby": "^5.6.1",
     "gatsby-plugin-image": "^3.6.0",

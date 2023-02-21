@@ -6,14 +6,27 @@
     "titleBar.inactiveBackground": "#FFC600CC"
   },
 
-  // These are all my auto-save configs
+  // config related to code formatting
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  // turn it off for JS and JSX, we will do this via eslint
-  "[javascript][javascriptreact][typescript][typescriptreact]": {
-    "editor.formatOnSave": false
+  "[javascript]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
   },
-  // tell the ESLint plugin to run on save
+  "[javascriptreact]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
+  },
+  "javascript.validate.enable": false, //disable all built-in syntax checking
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll.eslint": true,
+    "source.fixAll.tslint": true,
+    "source.organizeImports": true
+  },
+  "eslint.alwaysShowStatus": true,
+  // emmet
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
   }
 }

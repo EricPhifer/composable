@@ -25,6 +25,9 @@
   --size-gutter: var(--space-5);
   --size-gap: var(--space-6);
   --nav-height: 5rem;
+  --footer-height: 20rem;
+  --copyright-height: 2rem;
+  --section-height: 15rem;
 }
 html {
   -webkit-text-size-adjust: 100%;

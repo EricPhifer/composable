@@ -1,8 +1,7 @@
 import * as React from "react"
 
-const Header = () => (
-  <header>
-  </header>
+const Header = ({ siteTitle }) => (
+  <header></header>
 )
 
 export default Header

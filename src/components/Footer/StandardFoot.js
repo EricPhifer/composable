@@ -1,34 +1,18 @@
-import { Link } from 'gatsby'
 import * as React from 'react'
 import { BsCaretLeftFill, BsCaretRightFill } from 'react-icons/bs'
 import styled from 'styled-components'
 
-const NavStyles = styled.nav`
-  position: relative;
-  width: 100vw;
-  height: var(--nav-height);
-  background: darkcyan;
-`
-
-const LinkList = styled.ul`
+const FooterStyles = styled.footer`
+  width: 100%;
+  height: var(--footer-height);
+  font-size: 1.5rem;
   display: inline-flex;
-  position: absolute;
-  right: 2rem;
-  list-style-type: none;
-  a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #fff;
-  }
-`
-
-const ListItem = styled.li`
-  padding: 1.5rem 2rem;
+  background: lightcyan;
 `
 
 const Pagination = styled.div`
   width: 100%;
-  height: 100%;
+  height: var(--footer-height);
   display: flex;
   position: absolute;
   align-items: center;
@@ -56,8 +40,8 @@ const RightCaret = styled.button`
   right: 0;
 `
 
-const Navigation = () => (
-  <NavStyles>
+const Footer = () => (
+  <FooterStyles>
     <Pagination>
       <LeftCaret type="button">
         <BsCaretLeftFill />
@@ -66,18 +50,8 @@ const Navigation = () => (
         <BsCaretRightFill />
       </RightCaret>
     </Pagination>
-    <LinkList>
-      <Link to="#">
-        <ListItem>One</ListItem>
-      </Link>
-      <Link to="#">
-        <ListItem>Two</ListItem>
-      </Link>
-      <Link to="#">
-        <ListItem>Three</ListItem>
-      </Link>
-    </LinkList>
-  </NavStyles>
+    <p />
+  </FooterStyles>
 )
 
-export default Navigation
+export default Footer

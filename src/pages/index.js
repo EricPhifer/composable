@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { BsCaretLeftFill, BsCaretRightFill } from 'react-icons/bs'
+import Carousel from 'react-bootstrap/Carousel'
 import styled from 'styled-components'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
@@ -24,114 +24,42 @@ const AlternativeStyles = styled.section`
   position: relative;
 `
 
-const Pagination = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  position: absolute;
-  align-items: center;
-`
-
-const LeftCaret = styled.button`
-  height: 3rem;
-  border-radius: 50%;
-  position: absolute;
-  font-size: 2rem;
-  padding: 0.4rem;
-  background: rgba(0, 0, 0, 0.2);
-  color: rgba(255, 255, 255, 0.6);
-  left: 0;
-`
-
-const RightCaret = styled.button`
-  height: 3rem;
-  border-radius: 50%;
-  position: absolute;
-  font-size: 2rem;
-  padding: 0.4rem;
-  background: rgba(0, 0, 0, 0.2);
-  color: rgba(255, 255, 255, 0.6);
-  right: 0;
-`
-
 const IndexPage = () => (
   <Layout>
-    <HeroStyles>
-      <Pagination>
-        <LeftCaret type="button">
-          <BsCaretLeftFill />
-        </LeftCaret>
-        <RightCaret type="button">
-          <BsCaretRightFill />
-        </RightCaret>
-      </Pagination>
-      <div />
-    </HeroStyles>
+    <Carousel>
+      <Carousel.Item>
+        <HeroStyles>
+          <h1>Hello, World</h1>
+        </HeroStyles>
+      </Carousel.Item>
+      <Carousel.Item>
+        <HeroStyles>
+          <h1>Hello, Bolg</h1>
+        </HeroStyles>
+      </Carousel.Item>
+      <Carousel.Item>
+        <HeroStyles>
+          <h1>Hello, Bilbo</h1>
+        </HeroStyles>
+      </Carousel.Item>
+    </Carousel>
     <AlternativeStyles>
-      <Pagination>
-        <LeftCaret type="button">
-          <BsCaretLeftFill />
-        </LeftCaret>
-        <RightCaret type="button">
-          <BsCaretRightFill />
-        </RightCaret>
-      </Pagination>
-      <div />
+      <p>Howdy</p>
     </AlternativeStyles>
     <SectionStyles>
-      <Pagination>
-        <LeftCaret type="button">
-          <BsCaretLeftFill />
-        </LeftCaret>
-        <RightCaret type="button">
-          <BsCaretRightFill />
-        </RightCaret>
-      </Pagination>
-      <div />
+      <p>Hola</p>
     </SectionStyles>
     <AlternativeStyles>
-      <Pagination>
-        <LeftCaret type="button">
-          <BsCaretLeftFill />
-        </LeftCaret>
-        <RightCaret type="button">
-          <BsCaretRightFill />
-        </RightCaret>
-      </Pagination>
-      <div />
+      <p>Howdy</p>
     </AlternativeStyles>
     <SectionStyles>
-      <Pagination>
-        <LeftCaret type="button">
-          <BsCaretLeftFill />
-        </LeftCaret>
-        <RightCaret type="button">
-          <BsCaretRightFill />
-        </RightCaret>
-      </Pagination>
-      <div />
+      <p>Hola</p>
     </SectionStyles>
     <AlternativeStyles>
-      <Pagination>
-        <LeftCaret type="button">
-          <BsCaretLeftFill />
-        </LeftCaret>
-        <RightCaret type="button">
-          <BsCaretRightFill />
-        </RightCaret>
-      </Pagination>
-      <div />
+      <p>Howdy</p>
     </AlternativeStyles>
     <SectionStyles>
-      <Pagination>
-        <LeftCaret type="button">
-          <BsCaretLeftFill />
-        </LeftCaret>
-        <RightCaret type="button">
-          <BsCaretRightFill />
-        </RightCaret>
-      </Pagination>
-      <div />
+      <p>Hola</p>
     </SectionStyles>
   </Layout>
 )

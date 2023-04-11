@@ -1,7 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
-import globalbgdesktop from '../images/globalbgdesktop.gif';
-import globalbgportrait from '../images/globalbgportrait.gif';
-import globalbgtablet from '../images/globalbgtablet.gif';
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
   /* CSS Reset by Mirkov Sasa https://github.com/mirkovsasa/CSS-Reset/blob/main/Reset.css */
@@ -70,6 +67,7 @@ const GlobalStyles = createGlobalStyle`
       max-width: 100%;
       display: block;
   }
+  /* End Reset */
 
   // Global Styles
   :root {
@@ -87,25 +85,6 @@ const GlobalStyles = createGlobalStyle`
     max-width: 100vw;
     margin: 0;
   }
-  html {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-attachment: fixed;
-    overflow-x: hidden;
-    @media only screen and (min-width: 1220px) {
-      background-image: url(${globalbgdesktop})
-    }
-    @media only screen and (max-width: 1219px) {
-      background-image: url(${globalbgportrait})
-    }
-    @media only screen and (max-width: 900px) {
-      background-image: url(${globalbgtablet})
-    }
-    @media only screen and (max-width: 500px) {
-      background-image: url(${globalbgtablet})
-    }
-  }
   body {
     position: relative;
   }
@@ -120,7 +99,7 @@ const GlobalStyles = createGlobalStyle`
   }
   html {
     scrollbar-width: thin;
-    scrollbar-color: var(--lightred) #fff;
+    scrollbar-color: var(--blue) #fff;
   }
   body::-webkit-scrollbar-track {
     background: transparent;
@@ -132,6 +111,6 @@ const GlobalStyles = createGlobalStyle`
   img {
     max-width: 100%;
   }
-`;
+`
 
-export default GlobalStyles;
+export default GlobalStyles

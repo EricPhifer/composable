@@ -1,9 +1,9 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
 const Typography = createGlobalStyle`
   html {
-    font-family: Constantia, 'Lucida Bright', Lucidabright, 'Lucida Serif', Lucida,
-    'DejaVu Serif', 'Bitstream Vera Serif', 'Liberation Serif', Georgia, serif;    
+    font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+   
     color: #000;
   }
 
@@ -24,6 +24,6 @@ const Typography = createGlobalStyle`
       color: var(--lightblue);
     }
   }
-`;
+`
 
-export default Typography;
+export default Typography

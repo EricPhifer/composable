@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 const StandardContact = () => (
-  <form>
+  <form id="contact">
     <input />
     <button type="submit">Submit</button>
   </form>

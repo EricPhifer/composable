@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 const ImgCarouselWithWords = () => (
-  <section>
+  <section id="carousels-image-with-words">
     <div className="slideOne">
       <img alt="example 1" />
       <h3>Slide 1</h3>

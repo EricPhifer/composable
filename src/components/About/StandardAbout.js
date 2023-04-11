@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 const StandardAbout = () => (
-  <section>
+  <section id="about">
     <h1>About Us</h1>
   </section>
 )

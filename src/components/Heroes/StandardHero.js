@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 const Hero = () => (
-  <header>
+  <header id="hero">
     <h1>Site Title</h1>
   </header>
 )

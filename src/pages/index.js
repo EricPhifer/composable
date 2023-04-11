@@ -1,7 +1,5 @@
 import * as React from 'react'
-import Carousel from 'react-bootstrap/Carousel'
 import styled from 'styled-components'
-import Layout from '../components/layout'
 import Seo from '../components/seo'
 
 const HeroStyles = styled.section`
@@ -25,24 +23,8 @@ const AlternativeStyles = styled.section`
 `
 
 const IndexPage = () => (
-  <Layout>
-    <Carousel>
-      <Carousel.Item>
-        <HeroStyles>
-          <h1>Hello, World</h1>
-        </HeroStyles>
-      </Carousel.Item>
-      <Carousel.Item>
-        <HeroStyles>
-          <h1>Hello, Bolg</h1>
-        </HeroStyles>
-      </Carousel.Item>
-      <Carousel.Item>
-        <HeroStyles>
-          <h1>Hello, Bilbo</h1>
-        </HeroStyles>
-      </Carousel.Item>
-    </Carousel>
+  <>
+    <HeroStyles />
     <AlternativeStyles>
       <p>Howdy</p>
     </AlternativeStyles>
@@ -61,7 +43,7 @@ const IndexPage = () => (
     <SectionStyles>
       <p>Hola</p>
     </SectionStyles>
-  </Layout>
+  </>
 )
 
 /**

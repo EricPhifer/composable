@@ -79,6 +79,9 @@ const GlobalStyles = createGlobalStyle`
     --green: #50A000;
     --blue: #1777BE;
   }
+  html {
+    overflow-x: hidden;
+  }
   html, body {
     min-height: 100%;
     max-width: 100vw;

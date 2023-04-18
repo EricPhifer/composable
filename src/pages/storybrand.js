@@ -29,16 +29,20 @@ const Hero = styled.div`
   z-index: 10;
 `
 const Main = styled.main`
+  width: 80vw;
+  margin: 0 auto;
   position: relative;
   top: 7rem;
   bottom: 3rem;
 `
 
 const H2 = styled.h2`
-  margin: 1rem 2rem;
+  margin: 5rem 0 1rem;
   font-size: 5rem;
-  text-align: center;
   font-variant: small-caps;
+`
+const HR = styled.hr`
+  border: 0.5rem solid var(--orange);
 `
 
 const StoryBrand = () => (
@@ -50,20 +54,25 @@ const StoryBrand = () => (
     </Hero>
     <Main>
       <H2 id="sections">Sections</H2>
+      <HR />
       <SectionBottomImg />
       <SectionLeftImg />
       <SectionRightImg />
       <SectionTopImg />
       <H2 id="accordions">Accordions</H2>
+      <HR />
       <StandardAccordion />
       <H2 id="carousels">Carousels</H2>
+      <HR />
       <ImgCarouselWithWords />
       <ReviewCarousel />
       <LogoCarousel />
       <CardCarousel />
       <H2 id="about">About</H2>
+      <HR />
       <StandardAbout />
       <H2 id="forms">Forms</H2>
+      <HR />
       <StandardContact />
     </Main>
   </>

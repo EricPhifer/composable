@@ -1,4 +1,5 @@
 import * as React from 'react'
+import styled from 'styled-components'
 // About Components
 import StandardAbout from '../components/About/StandardAbout'
 // Accordion Components
@@ -21,22 +22,50 @@ import HerosFoot from '../components/StoryDesign/HeroesFoot'
 import StoryHero from '../components/StoryDesign/StoryHero'
 import StoryNav from '../components/StoryDesign/StoryNav'
 
+const Hero = styled.div`
+  height: calc(100vh - 7rem);
+  position: relative;
+  top: 7rem;
+  z-index: 10;
+`
+const Main = styled.main`
+  position: relative;
+  top: 7rem;
+  bottom: 3rem;
+`
+
+const H2 = styled.h2`
+  margin: 1rem 2rem;
+  font-size: 5rem;
+  text-align: center;
+  font-variant: small-caps;
+`
+
 const StoryBrand = () => (
   <>
     <StoryNav />
-    <StoryHero />
-    <HerosFoot />
-    <SectionTopImg />
-    <SectionBottomImg />
-    <SectionLeftImg />
-    <SectionRightImg />
-    <StandardAccordion />
-    <ImgCarouselWithWords />
-    <ReviewCarousel />
-    <LogoCarousel />
-    <CardCarousel />
-    <StandardAbout />
-    <StandardContact />
+    <Hero>
+      <StoryHero />
+      <HerosFoot />
+    </Hero>
+    <Main>
+      <H2 id="sections">Sections</H2>
+      <SectionBottomImg />
+      <SectionLeftImg />
+      <SectionRightImg />
+      <SectionTopImg />
+      <H2 id="accordions">Accordions</H2>
+      <StandardAccordion />
+      <H2 id="carousels">Carousels</H2>
+      <ImgCarouselWithWords />
+      <ReviewCarousel />
+      <LogoCarousel />
+      <CardCarousel />
+      <H2 id="about">About</H2>
+      <StandardAbout />
+      <H2 id="forms">Forms</H2>
+      <StandardContact />
+    </Main>
   </>
 )
 

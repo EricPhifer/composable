@@ -3,17 +3,19 @@ import styled from 'styled-components'
 
 const CopyStyles = styled.footer`
   width: 100%;
-  height: var(--copyright-height);
-  font-size: var(--font-sm);
+  height: 3rem;
   display: inline-flex;
   justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
   background-color: darkcyan;
   font-weight: 600;
   color: white;
 `
 
 const Copyright = () => (
-  <CopyStyles>
+  <CopyStyles className="storybrand">
     <p>
       &copy; {new Date().getFullYear()} All Rights Reserved Phifer Web Solutions
     </p>

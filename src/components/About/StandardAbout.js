@@ -1,8 +1,8 @@
 import * as React from 'react'
 
 const StandardAbout = () => (
-  <section id="about">
-    <h1>About Us</h1>
+  <section id="standard-about">
+    <h2>About Us</h2>
   </section>
 )
 

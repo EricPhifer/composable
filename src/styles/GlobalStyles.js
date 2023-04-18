@@ -71,14 +71,13 @@ const GlobalStyles = createGlobalStyle`
 
   // Global Styles
   :root {
-    --black: #232129;
+    --black: #272727;
+    --tan: #BBB094;
     --white: #fff;
-    --gray: #333333;
-    --red: #710A0C;
-    --call: #C0F5FA;
-    --green: #08890B;
-    --blue: steelblue;
-    --lightblue: lightsteelblue;
+    --gray: #585858;
+    --orange: #EF8E1C;
+    --green: #50A000;
+    --blue: #1777BE;
   }
   html, body {
     min-height: 100%;

@@ -1,10 +1,19 @@
 import * as React from 'react'
+import styled from 'styled-components'
+
+const Section = styled.section`
+  width: 100vw;
+  height: 5rem;
+`
+const H2 = styled.h2`
+  margin: 1rem 2rem;
+`
 
 const SectionTopImg = () => (
-  <section id="sections-top-img">
-    <h2>Top Image Section</h2>
+  <Section id="sections-top-img">
+    <H2>Top Image Section</H2>
     <img alt="example 1" />
-  </section>
+  </Section>
 )
 
 export default SectionTopImg

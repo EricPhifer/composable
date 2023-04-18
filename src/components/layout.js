@@ -8,6 +8,9 @@ import Copyright from './Copyright'
 const SiteStyles = styled.div`
   width: 100vw;
   min-height: 100vh;
+  .storybrand {
+    bottom: -10rem;
+  }
 `
 
 // eslint-disable-next-line react/prop-types
@@ -17,7 +20,7 @@ export default function Layout({ children }) {
       <GlobalStyles />
       <Typography />
       <SiteStyles>
-        <main>{children}</main>
+        {children}
         <Copyright />
       </SiteStyles>
     </>

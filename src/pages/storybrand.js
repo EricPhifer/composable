@@ -43,6 +43,9 @@ const H2 = styled.h2`
   margin: 5rem 0 1rem;
   font-size: 5rem;
   font-variant: small-caps;
+  @media only screen and (max-width: 330px) {
+    font-size: 4rem;
+  }
 `
 const HR = styled.hr`
   border: 0.5rem solid var(--orange);

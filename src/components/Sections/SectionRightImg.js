@@ -65,6 +65,7 @@ const Image = styled.div`
     height: 15rem;
   }
 `
+
 const SectionRightImg = () => (
   <Section id="sections-right-img">
     <ShadowCard>

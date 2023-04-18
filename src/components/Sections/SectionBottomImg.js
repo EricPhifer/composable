@@ -2,7 +2,8 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 const Section = styled.section`
-  width: 80vw;
+  max-width: 80rem;
+  width: 100%;
   height: 100%;
   margin: 0 auto;
   p:last-child {
@@ -14,6 +15,9 @@ const ShadowCard = styled.div`
   padding: 3rem;
   box-shadow: 0.2rem 0.2rem 1rem var(--gray);
   border-radius: 1rem;
+  @media only screen and (max-width: 500px) {
+    padding: 2rem;
+  }
 `
 
 const H2 = styled.h2`
@@ -37,6 +41,9 @@ const Image = styled.div`
     position: absolute;
     bottom: 0;
     right: 0;
+  }
+  @media only screen and (max-width: 500px) {
+    height: 15rem;
   }
 `
 

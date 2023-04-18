@@ -34,6 +34,9 @@ const Main = styled.main`
   position: relative;
   top: 7rem;
   bottom: 3rem;
+  @media only screen and (max-width: 500px) {
+    width: 98vw;
+  }
 `
 
 const H2 = styled.h2`

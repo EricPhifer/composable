@@ -2,7 +2,8 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 const Section = styled.section`
-  width: 80vw;
+  max-width: 108rem;
+  width: 100%;
   height: 100%;
   margin: 0 auto;
   p:last-child {
@@ -14,6 +15,9 @@ const ShadowCard = styled.div`
   padding: 3rem;
   box-shadow: 0.2rem 0.2rem 1rem var(--gray);
   border-radius: 1rem;
+  @media only screen and (max-width: 500px) {
+    padding: 2rem;
+  }
 `
 
 const H2 = styled.h2`
@@ -23,15 +27,21 @@ const H2 = styled.h2`
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(auto, 1fr));
-`
-
-const Left = styled.div`
-  margin: 0;
+  @media only screen and (max-width: 1080px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 const Right = styled.div`
   margin: 0;
+`
+
+const Left = styled.div`
+  margin: 0;
   padding: 0 2rem;
+  @media only screen and (max-width: 500px) {
+    padding: 0;
+  }
 `
 
 const Paragraph = styled.p`
@@ -50,6 +60,9 @@ const Image = styled.div`
     position: absolute;
     bottom: 0;
     right: 0;
+  }
+  @media only screen and (max-width: 1080px) {
+    height: 15rem;
   }
 `
 const SectionRightImg = () => (

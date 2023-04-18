@@ -10,6 +10,7 @@ const Section = styled.section`
     padding-bottom: 1.5rem;
   }
 `
+
 const ShadowCard = styled.div`
   margin: 2rem 1rem;
   padding: 3rem;

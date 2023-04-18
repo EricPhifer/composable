@@ -7,6 +7,7 @@ const CopyStyles = styled.footer`
   display: inline-flex;
   justify-content: space-around;
   align-items: center;
+  text-align: center;
   position: absolute;
   bottom: 0;
   background-color: darkcyan;

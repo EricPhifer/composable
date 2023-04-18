@@ -45,9 +45,6 @@ const InlineField = styled.fieldset`
   @media only screen and (max-width: 900px) {
     display: flex;
     flex-flow: column nowrap;
-    input {
-      width: 90%;
-    }
   }
   @media only screen and (max-height: 750px) {
     margin-bottom: 1rem;
@@ -66,7 +63,6 @@ const FullField = styled.fieldset`
   display: flex;
   justify-content: center;
   border: none;
-  margin-bottom: 2rem;
   input {
     width: 100%;
     padding: 1rem;
@@ -97,7 +93,6 @@ const Submit = styled.button`
     border: 0.2rem dotted var(--blue);
   }
   @media only screen and (max-width: 900px) {
-    width: 80%;
     margin-bottom: 2rem;
   }
 `

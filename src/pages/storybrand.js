@@ -37,6 +37,9 @@ const Main = styled.main`
   @media only screen and (max-width: 500px) {
     width: 98vw;
   }
+  @media only screen and (max-height: 600px) {
+    width: 96vw;
+  }
 `
 
 const H2 = styled.h2`

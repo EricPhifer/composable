@@ -21,6 +21,7 @@ const Slides = styled.div`
   display: flex;
   text-align: left;
   overflow-x: auto;
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
@@ -97,6 +98,12 @@ const RandomOne = styled.div`
   background-image: url(https://source.unsplash.com/random/?nature);
   background-position: center center;
   background-size: cover;
+  @media only screen and (max-width: 500px) {
+    height: 50%;
+  }
+  @media only screen and (max-height: 600px) {
+    height: 50%;
+  }
 `
 
 const RandomTwo = styled.div`
@@ -106,6 +113,12 @@ const RandomTwo = styled.div`
   background-image: url(https://source.unsplash.com/random/?trees);
   background-position: center center;
   background-size: cover;
+  @media only screen and (max-width: 500px) {
+    height: 50%;
+  }
+  @media only screen and (max-height: 600px) {
+    height: 50%;
+  }
 `
 
 const RandomThree = styled.div`
@@ -115,6 +128,12 @@ const RandomThree = styled.div`
   background-image: url(https://source.unsplash.com/random/?architecture);
   background-position: center center;
   background-size: cover;
+  @media only screen and (max-width: 500px) {
+    height: 50%;
+  }
+  @media only screen and (max-height: 600px) {
+    height: 50%;
+  }
 `
 
 const RandomFour = styled.div`
@@ -124,11 +143,24 @@ const RandomFour = styled.div`
   background-image: url(https://source.unsplash.com/random/?mountains);
   background-position: center center;
   background-size: cover;
+  @media only screen and (max-width: 500px) {
+    height: 50%;
+  }
+  @media only screen and (max-height: 600px) {
+    height: 50%;
+  }
 `
 
 const Content = styled.div`
   width: 90%;
   height: 25%;
+  overflow-x: auto;
+  @media only screen and (max-width: 500px) {
+    height: 50%;
+  }
+  @media only screen and (max-height: 600px) {
+    height: 50%;
+  }
 `
 
 const H3 = styled.h3`
@@ -139,6 +171,9 @@ const H3 = styled.h3`
 const Paragraph = styled.p`
   font-size: 2rem;
   padding: 0.5rem 0;
+  @media only screen and (max-width: 500px) {
+    font-size: 1.5rem;
+  }
 `
 
 const ImgCarouselWithWords = () => (

@@ -10,7 +10,7 @@ const Section = styled.section`
 const Slider = styled.div`
   max-width: 80rem;
   min-height: 40rem;
-  height: 80vh;
+  height: 100%;
   margin: 0 auto;
   text-align: center;
   overflow: hidden;
@@ -19,6 +19,7 @@ const Slider = styled.div`
 const Slides = styled.div`
   height: 90%;
   display: flex;
+  align-items: center;
   text-align: left;
   overflow-x: auto;
   overflow-y: hidden;
@@ -93,67 +94,67 @@ const Nav = styled(Link)`
 
 const RandomOne = styled.div`
   width: 100%;
-  height: 75%;
+  height: 50rem;
   border-radius: 1rem 1rem 0 0;
   background-image: url(https://source.unsplash.com/random/?nature);
   background-position: center center;
   background-size: cover;
   @media only screen and (max-width: 500px) {
-    height: 50%;
+    height: 30rem;
   }
   @media only screen and (max-height: 600px) {
-    height: 50%;
+    height: 30rem;
   }
 `
 
 const RandomTwo = styled.div`
   width: 100%;
-  height: 75%;
+  height: 50rem;
   border-radius: 1rem 1rem 0 0;
   background-image: url(https://source.unsplash.com/random/?trees);
   background-position: center center;
   background-size: cover;
   @media only screen and (max-width: 500px) {
-    height: 50%;
+    height: 30rem;
   }
   @media only screen and (max-height: 600px) {
-    height: 50%;
+    height: 30rem;
   }
 `
 
 const RandomThree = styled.div`
   width: 100%;
-  height: 75%;
+  height: 50rem;
   border-radius: 1rem 1rem 0 0;
   background-image: url(https://source.unsplash.com/random/?architecture);
   background-position: center center;
   background-size: cover;
   @media only screen and (max-width: 500px) {
-    height: 50%;
+    height: 30rem;
   }
   @media only screen and (max-height: 600px) {
-    height: 50%;
+    height: 30rem;
   }
 `
 
 const RandomFour = styled.div`
   width: 100%;
-  height: 75%;
+  height: 50rem;
   border-radius: 1rem 1rem 0 0;
   background-image: url(https://source.unsplash.com/random/?mountains);
   background-position: center center;
   background-size: cover;
   @media only screen and (max-width: 500px) {
-    height: 50%;
+    height: 30rem;
   }
   @media only screen and (max-height: 600px) {
-    height: 50%;
+    height: 30rem;
   }
 `
 
 const Content = styled.div`
   width: 90%;
-  height: 25%;
+  padding: 2rem 0;
   overflow-x: auto;
   @media only screen and (max-width: 500px) {
     height: 50%;

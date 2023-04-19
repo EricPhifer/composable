@@ -21,7 +21,7 @@ const Typography = createGlobalStyle`
     text-decoration: none;
     color: var(--blue);
     &:hover {
-      color: var(--lightblue);
+      color: var(--orange);
     }
   }
 `

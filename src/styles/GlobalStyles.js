@@ -81,6 +81,7 @@ const GlobalStyles = createGlobalStyle`
   }
   html {
     overflow-x: hidden;
+    scroll-behavior: smooth;
   }
   html, body {
     min-height: 100%;

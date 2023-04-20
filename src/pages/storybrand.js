@@ -23,6 +23,9 @@ import StoryHero from '../components/StoryDesign/StoryHero'
 import StoryNav from '../components/StoryDesign/StoryNav'
 
 const Hero = styled.div`
+  display: block;
+  padding-top: 10rem;
+  margin-top: -10rem;
   height: calc(100vh - 7rem);
   position: relative;
   top: 7rem;
@@ -43,6 +46,9 @@ const Main = styled.main`
 `
 
 const H2 = styled.h2`
+  display: block;
+  padding-top: 10rem;
+  margin-top: -10rem;
   margin: 5rem 0 1rem;
   font-size: 5rem;
   font-variant: small-caps;
@@ -57,7 +63,7 @@ const HR = styled.hr`
 const StoryBrand = () => (
   <>
     <StoryNav />
-    <Hero>
+    <Hero id="top">
       <StoryHero />
       <HerosFoot />
     </Hero>
@@ -80,7 +86,7 @@ const StoryBrand = () => (
       <H2 id="about">About</H2>
       <HR />
       <StandardAbout />
-      <H2 id="forms">Forms</H2>
+      <H2 id="contact">Forms</H2>
       <HR />
       <StandardContact />
     </Main>

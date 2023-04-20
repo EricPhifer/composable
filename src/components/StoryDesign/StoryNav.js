@@ -12,7 +12,7 @@ const Container = styled.div`
   top: 0;
   left: 0;
   background: #bbb094;
-  z-index: 101;
+  z-index: 1001;
 `
 
 const Nav = styled.nav`
@@ -53,7 +53,6 @@ const Img = styled(Link)`
   align-items: end;
   border: 0.3rem solid var(--white);
   border-radius: 0.5rem;
-  scroll-behavior: smooth;
   svg {
     font-size: 3rem;
     color: var(--white);
@@ -82,7 +81,6 @@ const Item = styled.li`
     font-size: 2rem;
     color: var(--white);
     transition: all 0.3s ease-in-out;
-    scroll-behavior: smooth;
     &:hover {
       color: var(--orange);
       text-shadow: 0.1rem 0 0 var(--white), -0.1rem 0 0 var(--white),
@@ -238,7 +236,6 @@ const MobileItem = styled.li`
     font-weight: bold;
     cursor: pointer;
     transition: all 0.5s ease;
-    scroll-behavior: smooth;
     &:hover {
       border-bottom: var(--white);
     }
@@ -255,7 +252,7 @@ const MobileItem = styled.li`
 export default function StoryNav() {
   const [checked, setChecked] = useState(false || '')
   return (
-    <Container id="top">
+    <Container>
       <Nav>
         <Img to="/storybrand#top">
           <IoLogoJavascript />

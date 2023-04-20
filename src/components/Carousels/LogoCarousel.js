@@ -19,11 +19,14 @@ const Logos = styled.ol`
   max-width: 80rem;
   display: flex;
   align-items: baseline;
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  list-style-type: none;
+  li {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
   &::-webkit-scrollbar {
     width: 1rem;
     height: 1rem;

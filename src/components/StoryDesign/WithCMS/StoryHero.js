@@ -1,13 +1,15 @@
 import { graphql, useStaticQuery } from 'gatsby'
+import SanityImage from 'gatsby-plugin-sanity-image'
 import * as React from 'react'
 import styled from 'styled-components'
 
 const Header = styled.header`
   height: 100%;
-  background-image: url(https://source.unsplash.com/random/?success);
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center center;
+  position: relative;
+  z-index: 0;
+  img {
+    position: absolute;
+  }
   // Landscape view
   @media only screen and (max-height: 600px) {
     height: calc(100% + 10rem);
@@ -17,12 +19,14 @@ const Header = styled.header`
 const Container = styled.div`
   width: 100%;
   height: 50%;
+  position: absolute;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
   color: var(--white);
   text-align: center;
+  z-index: 10;
   h1,
   h2 {
     padding: 0 2rem;
@@ -77,6 +81,15 @@ export default function StoryHero() {
       hero: allSanityHero {
         nodes {
           id
+          alt
+          tagline
+          title
+          image {
+            asset {
+              id
+            }
+            ...ImageWithPreview
+          }
         }
       }
     }
@@ -86,9 +99,17 @@ export default function StoryHero() {
     <>
       {nodes.map(node => (
         <Header key={node.id}>
+          <SanityImage
+            {...node.image}
+            alt={node.alt}
+            style={{
+              objectFit: 'cover',
+              auto: 'format',
+            }}
+          />
           <Container>
-            <Title>Amazing Business Inc.</Title>
-            <Motto>Stunning motto that encompasses us.</Motto>
+            <Title>{node.title}</Title>
+            <Motto>{node.tagline}</Motto>
           </Container>
         </Header>
       ))}

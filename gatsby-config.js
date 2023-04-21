@@ -1,12 +1,7 @@
 /**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
- */
-
-/**
  * @type {import('gatsby').GatsbyConfig}
  */
+
 module.exports = {
   siteMetadata: {
     title: `Composable Architecture by Phifer Web Solutions`,
@@ -21,6 +16,20 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        projectId: 'nk6j9rim',
+        dataset: 'production',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-sanity-image',
+      options: {
+        projectId: 'nk6j9rim',
+        dataset: 'production',
       },
     },
     `gatsby-transformer-sharp`,

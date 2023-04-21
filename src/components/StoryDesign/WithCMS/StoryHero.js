@@ -1,3 +1,4 @@
+import { graphql, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 import styled from 'styled-components'
 
@@ -12,6 +13,7 @@ const Header = styled.header`
     height: calc(100% + 10rem);
   }
 `
+
 const Container = styled.div`
   width: 100%;
   height: 50%;
@@ -53,6 +55,7 @@ const Title = styled.h1`
     margin: 0;
   }
 `
+
 const Motto = styled.h2`
   margin: 0;
   font-size: 3rem;
@@ -68,13 +71,27 @@ const Motto = styled.h2`
   }
 `
 
-const StoryHero = () => (
-  <Header>
-    <Container>
-      <Title>Amazing Business Inc.</Title>
-      <Motto>Stunning motto that encompasses us.</Motto>
-    </Container>
-  </Header>
-)
-
-export default StoryHero
+export default function StoryHero() {
+  const { hero } = useStaticQuery(graphql`
+    query {
+      hero: allSanityHero {
+        nodes {
+          id
+        }
+      }
+    }
+  `)
+  const { nodes } = hero
+  return (
+    <>
+      {nodes.map(node => (
+        <Header key={node.id}>
+          <Container>
+            <Title>Amazing Business Inc.</Title>
+            <Motto>Stunning motto that encompasses us.</Motto>
+          </Container>
+        </Header>
+      ))}
+    </>
+  )
+}

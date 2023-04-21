@@ -1,3 +1,4 @@
+import { graphql, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 import styled from 'styled-components'
 
@@ -67,50 +68,67 @@ const Image = styled.div`
   }
 `
 
-const SectionLeftImg = () => (
-  <Section id="sections-left-img">
-    <ShadowCard>
-      <Grid>
-        <Left>
-          <Image>
-            <figcaption>Source: Unsplash.com | Erik Mclean</figcaption>
-          </Image>
-        </Left>
-        <Right>
-          <H2>Left Image Section</H2>
-          <Paragraph>
-            The European languages are members of the same family. Their
-            separate existence is a myth. For science, music, sport, etc, Europe
-            uses the same vocabulary. The languages only differ in their
-            grammar, their pronunciation and their most common words.
-          </Paragraph>
-          <Paragraph>
-            Everyone realizes why a new common language would be desirable: one
-            could refuse to pay expensive translators. To achieve this, it would
-            be necessary to have uniform grammar, pronunciation and more common
-            words.
-          </Paragraph>
-          <Paragraph>
-            If several languages coalesce, the grammar of the resulting language
-            is more simple and regular than that of the individual languages.
-            The new common language will be more simple and regular than the
-            existing European languages. It will be as simple as Occidental; in
-            fact, it will be Occidental.
-          </Paragraph>
-          <Paragraph>
-            To an English person, it will seem like simplified English, as a
-            skeptical Cambridge friend of mine told me what Occidental is. The
-            European languages are members of the same family. Their separate
-            existence is a myth. For science, music, sport, etc, Europe uses the
-            same vocabulary. The languages only differ in their grammar, their
-            pronunciation and their most common words. Everyone realizes why a
-            new common language would be desirable: one could refuse to pay
-            expensive translators.
-          </Paragraph>
-        </Right>
-      </Grid>
-    </ShadowCard>
-  </Section>
-)
-
-export default SectionLeftImg
+export default function SectionLeftImg() {
+  const { section } = useStaticQuery(graphql`
+    query {
+      section: allSanitySection {
+        nodes {
+          id
+        }
+      }
+    }
+  `)
+  const { nodes } = section
+  return (
+    <>
+      {nodes.map(node => (
+        <Section id="sections-left-img" key={node.id}>
+          <ShadowCard>
+            <Grid>
+              <Left>
+                <Image>
+                  <figcaption>Source: Unsplash.com | Erik Mclean</figcaption>
+                </Image>
+              </Left>
+              <Right>
+                <H2>Left Image Section</H2>
+                <Paragraph>
+                  The European languages are members of the same family. Their
+                  separate existence is a myth. For science, music, sport, etc,
+                  Europe uses the same vocabulary. The languages only differ in
+                  their grammar, their pronunciation and their most common
+                  words.
+                </Paragraph>
+                <Paragraph>
+                  Everyone realizes why a new common language would be
+                  desirable: one could refuse to pay expensive translators. To
+                  achieve this, it would be necessary to have uniform grammar,
+                  pronunciation and more common words.
+                </Paragraph>
+                <Paragraph>
+                  If several languages coalesce, the grammar of the resulting
+                  language is more simple and regular than that of the
+                  individual languages. The new common language will be more
+                  simple and regular than the existing European languages. It
+                  will be as simple as Occidental; in fact, it will be
+                  Occidental.
+                </Paragraph>
+                <Paragraph>
+                  To an English person, it will seem like simplified English, as
+                  a skeptical Cambridge friend of mine told me what Occidental
+                  is. The European languages are members of the same family.
+                  Their separate existence is a myth. For science, music, sport,
+                  etc, Europe uses the same vocabulary. The languages only
+                  differ in their grammar, their pronunciation and their most
+                  common words. Everyone realizes why a new common language
+                  would be desirable: one could refuse to pay expensive
+                  translators.
+                </Paragraph>
+              </Right>
+            </Grid>
+          </ShadowCard>
+        </Section>
+      ))}
+    </>
+  )
+}

@@ -1,3 +1,4 @@
+import { graphql, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 import styled from 'styled-components'
 
@@ -51,18 +52,32 @@ const Three = styled.div`
   }
 `
 
-const HeroesFoot = () => (
-  <Footer>
-    <Three className="first">
-      <p>Third Solution</p>
-    </Three>
-    <Three className="second">
-      <p>Primary Solution Two</p>
-    </Three>
-    <Three>
-      <p>Most Important</p>
-    </Three>
-  </Footer>
-)
-
-export default HeroesFoot
+export default function HeroesFoot() {
+  const { hero } = useStaticQuery(graphql`
+    query {
+      hero: allSanityHero {
+        nodes {
+          id
+        }
+      }
+    }
+  `)
+  const { nodes } = hero
+  return (
+    <>
+      {nodes.map(node => (
+        <Footer key={node.id}>
+          <Three className="first">
+            <p>Third Solution</p>
+          </Three>
+          <Three className="second">
+            <p>Primary Solution Two</p>
+          </Three>
+          <Three>
+            <p>Most Important</p>
+          </Three>
+        </Footer>
+      ))}
+    </>
+  )
+}

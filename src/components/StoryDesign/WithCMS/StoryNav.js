@@ -1,7 +1,7 @@
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
+import SanityImage from 'gatsby-plugin-sanity-image'
 import * as React from 'react'
 import { useState } from 'react'
-import { IoLogoJavascript } from 'react-icons/io'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -22,11 +22,13 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   .contact {
+    width: 45%;
+    height: 100%;
     display: flex;
     align-items: center;
-    font-size: 2rem;
+    text-align: center;
+    font-size: 2.25rem;
     color: var(--white);
-    height: 100%;
     padding: 2rem;
     background: var(--orange);
     transition: all 0.3s ease-in-out;
@@ -45,24 +47,14 @@ const Nav = styled.nav`
 `
 
 const Img = styled(Link)`
-  width: 5rem;
-  height: 5rem;
+  width: 20rem;
   margin: 1rem;
   display: flex;
-  justify-content: end;
-  align-items: end;
-  border: 0.3rem solid var(--white);
+  justify-content: center;
+  align-items: center;
   border-radius: 0.5rem;
-  svg {
-    font-size: 3rem;
-    color: var(--white);
-    transition: all 0.3s ease-in-out;
-    &:hover {
-      color: var(--orange);
-    }
-    &:focus {
-      color: var(--orange);
-    }
+  @media only screen and (max-width: 900px) {
+    width: 5rem;
   }
 `
 
@@ -250,69 +242,98 @@ const MobileItem = styled.li`
   }
 `
 export default function StoryNav() {
+  const { navigation } = useStaticQuery(graphql`
+    query {
+      navigation: allSanityNavigation {
+        nodes {
+          id
+          title
+          primetitle
+          primelink
+          navlinks {
+            _key
+            pagename
+            pagelink
+          }
+          logo {
+            asset {
+              id
+            }
+            ...ImageWithPreview
+          }
+          alt
+        }
+      }
+    }
+  `)
+  const { nodes } = navigation
   const [checked, setChecked] = useState(false || '')
   return (
-    <Container>
-      <Nav>
-        <Img to="/storybrand#top">
-          <IoLogoJavascript />
-        </Img>
-        <List>
-          <Item>
-            <Link to="/storybrand#sections">Sections</Link>
-          </Item>
-          <Item>
-            <Link to="/storybrand#accordions">Accordions</Link>
-          </Item>
-          <Item>
-            <Link to="/storybrand#carousels">Carousels</Link>
-          </Item>
-          <Item>
-            <Link to="/storybrand#about">About</Link>
-          </Item>
-        </List>
-        <Link to="/storybrand#contact" className="contact">
-          Contact Us
-        </Link>
-      </Nav>
-      <Mobile>
-        <Img to="/storybrand#top">
-          <IoLogoJavascript />
-        </Img>
-        <MenuToggle>
-          <MenuInput
-            type="checkbox"
-            checked={checked}
-            onClick={() => {
-              setChecked(old => !old)
-            }}
-          />
-          <span />
-          <span />
-          <span />
-          <MenuContainer id="menu">
-            <MobileNav>
-              <MobileList>
-                <MobileItem>
-                  <Link to="#sections">Sections</Link>
-                </MobileItem>
-                <MobileItem>
-                  <Link to="#accordions">Accordions</Link>
-                </MobileItem>
-                <MobileItem>
-                  <Link to="#carousels">Carousels</Link>
-                </MobileItem>
-                <MobileItem>
-                  <Link to="#about">About</Link>
-                </MobileItem>
-              </MobileList>
-              <Link to="/storybrand#contact" className="contact">
-                Contact Us
-              </Link>
-            </MobileNav>
-          </MenuContainer>
-        </MenuToggle>
-      </Mobile>
-    </Container>
+    <>
+      {nodes.map(node => (
+        <Container key={node.id}>
+          <Nav>
+            <Img to="/storybrand#top">
+              <SanityImage
+                {...node.logo}
+                alt={node.alt}
+                styles={{
+                  objectFit: 'contain',
+                  auto: 'format',
+                }}
+              />
+            </Img>
+            {node.navlinks.map(pagelink => (
+              <List key={pagelink._key}>
+                <Item>
+                  <Link to={pagelink.pagelink}>{pagelink.pagename}</Link>
+                </Item>
+              </List>
+            ))}
+            <Link to={node.primelink} className="contact">
+              {node.primetitle}
+            </Link>
+          </Nav>
+          <Mobile>
+            <Img to="/storybrand#top">
+              <SanityImage
+                {...node.logo}
+                alt={node.alt}
+                styles={{
+                  objectFit: 'contain',
+                  auto: 'format',
+                }}
+              />
+            </Img>
+            <MenuToggle>
+              <MenuInput
+                type="checkbox"
+                checked={checked}
+                onClick={() => {
+                  setChecked(old => !old)
+                }}
+              />
+              <span />
+              <span />
+              <span />
+              <MenuContainer id="menu">
+                <MobileNav>
+                  <MobileList>
+                    {node.navlinks.map(pagelink => (
+                      <MobileItem key={pagelink._key}>
+                        <Link to={pagelink.pagelink}>{pagelink.pagename}</Link>
+                      </MobileItem>
+                    ))}
+                  </MobileList>
+                  <Link to={node.primelink} className="contact">
+                    {node.primetitle}
+                  </Link>
+                </MobileNav>
+              </MenuContainer>
+            </MenuToggle>
+          </Mobile>
+        </Container>
+      ))}
+    </>
   )
 }

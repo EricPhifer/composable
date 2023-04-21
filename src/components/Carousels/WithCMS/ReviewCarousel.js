@@ -1,4 +1,4 @@
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 import { RxCaretLeft, RxCaretRight } from 'react-icons/rx'
 import styled from 'styled-components'
@@ -98,6 +98,7 @@ const Arrows = styled(Link)`
     }
   }
 `
+
 const Nav = styled(Link)`
   width: 0.75rem;
   height: 0.75rem;
@@ -164,100 +165,116 @@ const Quote = styled.blockquote`
   }
 `
 
-const ReviewCarousel = () => (
-  <Section id="carousels-review">
-    <Slider>
-      <Reviews className="reviews">
-        <Review className="review" id="review1">
-          <Content>
-            <Top>
-              <Quote>
-                Best. Beef. Ever. Cannot say enough good about Dennis & Ann!
-              </Quote>
-            </Top>
-            <Bottom>
-              <H4>Darlene O.</H4>
-            </Bottom>
-          </Content>
-          <Snapper>
-            <Arrows to="#review4" className="prev">
-              <RxCaretLeft />
-            </Arrows>
-            <Arrows to="#review2" className="next">
-              <RxCaretRight />
-            </Arrows>
-          </Snapper>
-        </Review>
-        <Review className="review" id="review2">
-          <Content>
-            <Top>
-              <Quote>
-                Speed is most important to me, so when they got me my order the
-                same day I knew this was the right business to work with!
-              </Quote>
-            </Top>
-            <Bottom>
-              <H4>Berry A.</H4>
-            </Bottom>
-          </Content>
-          <Snapper>
-            <Arrows to="#review1" className="prev">
-              <RxCaretLeft />
-            </Arrows>
-            <Arrows to="#review3" className="next">
-              <RxCaretRight />
-            </Arrows>
-          </Snapper>
-        </Review>
-        <Review className="review" id="review3">
-          <Content>
-            <Top>
-              <Quote>
-                I use a lot of energy running around and Dennis & Ann provide
-                the meat I need to sustain a healthy lifestyle!
-              </Quote>
-            </Top>
-            <Bottom>
-              <H4>Clark K.</H4>
-            </Bottom>
-          </Content>
-          <Snapper>
-            <Arrows to="#review2" className="prev">
-              <RxCaretLeft />
-            </Arrows>
-            <Arrows to="#review4" className="next">
-              <RxCaretRight />
-            </Arrows>
-          </Snapper>
-        </Review>
-        <Review className="review" id="review4">
-          <Content>
-            <Top>
-              <Quote>
-                I don't eat fish, so beef is a great alternative to get all I
-                need in my diet.
-              </Quote>
-            </Top>
-            <Bottom>
-              <H4>Arthur C.</H4>
-            </Bottom>
-          </Content>
-          <Snapper>
-            <Arrows to="#review3" className="prev">
-              <RxCaretLeft />
-            </Arrows>
-            <Arrows to="#review1" className="next">
-              <RxCaretRight />
-            </Arrows>
-          </Snapper>
-        </Review>
-      </Reviews>
-      <Nav to="#review1" />
-      <Nav to="#review2" />
-      <Nav to="#review3" />
-      <Nav to="#review4" />
-    </Slider>
-  </Section>
-)
-
-export default ReviewCarousel
+export default function ReviewCarousel() {
+  const { imagecarousel } = useStaticQuery(graphql`
+    query {
+      imagecarousel: allSanityReviews {
+        nodes {
+          id
+        }
+      }
+    }
+  `)
+  const { nodes } = imagecarousel
+  return (
+    <>
+      {nodes.map(node => (
+        <Section id="carousels-review" key={node.id}>
+          <Slider>
+            <Reviews className="reviews">
+              <Review className="review" id="review1">
+                <Content>
+                  <Top>
+                    <Quote>
+                      Best. Beef. Ever. Cannot say enough good about Dennis &
+                      Ann!
+                    </Quote>
+                  </Top>
+                  <Bottom>
+                    <H4>Darlene O.</H4>
+                  </Bottom>
+                </Content>
+                <Snapper>
+                  <Arrows to="#review4" className="prev">
+                    <RxCaretLeft />
+                  </Arrows>
+                  <Arrows to="#review2" className="next">
+                    <RxCaretRight />
+                  </Arrows>
+                </Snapper>
+              </Review>
+              <Review className="review" id="review2">
+                <Content>
+                  <Top>
+                    <Quote>
+                      Speed is most important to me, so when they got me my
+                      order the same day I knew this was the right business to
+                      work with!
+                    </Quote>
+                  </Top>
+                  <Bottom>
+                    <H4>Berry A.</H4>
+                  </Bottom>
+                </Content>
+                <Snapper>
+                  <Arrows to="#review1" className="prev">
+                    <RxCaretLeft />
+                  </Arrows>
+                  <Arrows to="#review3" className="next">
+                    <RxCaretRight />
+                  </Arrows>
+                </Snapper>
+              </Review>
+              <Review className="review" id="review3">
+                <Content>
+                  <Top>
+                    <Quote>
+                      I use a lot of energy running around and Dennis & Ann
+                      provide the meat I need to sustain a healthy lifestyle!
+                    </Quote>
+                  </Top>
+                  <Bottom>
+                    <H4>Clark K.</H4>
+                  </Bottom>
+                </Content>
+                <Snapper>
+                  <Arrows to="#review2" className="prev">
+                    <RxCaretLeft />
+                  </Arrows>
+                  <Arrows to="#review4" className="next">
+                    <RxCaretRight />
+                  </Arrows>
+                </Snapper>
+              </Review>
+              <Review className="review" id="review4">
+                <Content>
+                  <Top>
+                    <Quote>
+                      I don't eat fish, so beef is a great alternative to get
+                      all I need in my diet.
+                    </Quote>
+                  </Top>
+                  <Bottom>
+                    <H4>Arthur C.</H4>
+                  </Bottom>
+                </Content>
+                <Snapper>
+                  <Arrows to="#review3" className="prev">
+                    <RxCaretLeft />
+                  </Arrows>
+                  <Arrows to="#review1" className="next">
+                    <RxCaretRight />
+                  </Arrows>
+                </Snapper>
+              </Review>
+            </Reviews>
+            <Nav to="#review1" />
+            <Nav to="#review2" />
+            <Nav to="#review3" />
+            <Nav to="#review4" />
+          </Slider>
+        </Section>
+      ))}
+    </>
+  )
+}

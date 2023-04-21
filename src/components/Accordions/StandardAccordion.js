@@ -81,7 +81,7 @@ const StandardAccordion = () => (
     <Expander>
       <Input type="checkbox" />
       <Blank />
-      <Title>Title 1</Title>
+      <Title>FAQ 1</Title>
       <FaAngleDown />
       <Content className="content">
         <Paragraph>
@@ -114,7 +114,7 @@ const StandardAccordion = () => (
     <Expander>
       <Input type="checkbox" />
       <Blank />
-      <Title>Title 2</Title>
+      <Title>FAQ 2</Title>
       <FaAngleDown />
       <Content className="content">
         <Paragraph>
@@ -147,7 +147,7 @@ const StandardAccordion = () => (
     <Expander>
       <Input type="checkbox" />
       <Blank />
-      <Title>Title 3</Title>
+      <Title>FAQ 3</Title>
       <FaAngleDown />
       <Content className="content">
         <Paragraph>

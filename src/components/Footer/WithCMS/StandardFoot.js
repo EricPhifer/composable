@@ -1,3 +1,4 @@
+import { graphql, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 import { BsCaretLeftFill, BsCaretRightFill } from 'react-icons/bs'
 import styled from 'styled-components'
@@ -40,18 +41,32 @@ const RightCaret = styled.button`
   right: 0;
 `
 
-const Footer = () => (
-  <FooterStyles>
-    <Pagination>
-      <LeftCaret type="button">
-        <BsCaretLeftFill />
-      </LeftCaret>
-      <RightCaret type="button">
-        <BsCaretRightFill />
-      </RightCaret>
-    </Pagination>
-    <p />
-  </FooterStyles>
-)
-
-export default Footer
+export default function Footer() {
+  const { footer } = useStaticQuery(graphql`
+    query {
+      footer: allSanityFooter {
+        nodes {
+          id
+        }
+      }
+    }
+  `)
+  const { nodes } = footer
+  return (
+    <>
+      {nodes.map(node => (
+        <FooterStyles key={node.id}>
+          <Pagination>
+            <LeftCaret type="button">
+              <BsCaretLeftFill />
+            </LeftCaret>
+            <RightCaret type="button">
+              <BsCaretRightFill />
+            </RightCaret>
+          </Pagination>
+          <p />
+        </FooterStyles>
+      ))}
+    </>
+  )
+}

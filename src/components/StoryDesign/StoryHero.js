@@ -12,6 +12,7 @@ const Header = styled.header`
     height: calc(100% + 10rem);
   }
 `
+
 const Container = styled.div`
   width: 100%;
   height: 50%;
@@ -53,6 +54,7 @@ const Title = styled.h1`
     margin: 0;
   }
 `
+
 const Motto = styled.h2`
   margin: 0;
   font-size: 3rem;

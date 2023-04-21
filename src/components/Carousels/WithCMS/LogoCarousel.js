@@ -1,4 +1,4 @@
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 import { FaCaretLeft, FaCaretRight } from 'react-icons/fa'
 import styled from 'styled-components'
@@ -191,81 +191,95 @@ const RandomFour = styled.a`
   }
 `
 
-const LogoCarousel = () => (
-  <Section id="carousels-logo" aria-label="Logo Gallery">
-    <Slider>
-      <Logos className="logos">
-        <Logo className="logo" id="logo1" tabIndex={0}>
-          <Grid>
-            <RandomOne href="#" rel="noopener" />
-            <RandomTwo href="#" rel="noopener" />
-            <RandomThree href="#" rel="noopener" />
-            <RandomFour href="#" rel="noopener" />
-          </Grid>
-          <Snapper>
-            <Arrows to="#logo4" className="prev">
-              <FaCaretLeft />
-            </Arrows>
-            <Arrows to="#logo2" className="next">
-              <FaCaretRight />
-            </Arrows>
-          </Snapper>
-        </Logo>
-        <Logo className="logo" id="logo2" tabIndex={0}>
-          <Grid>
-            <RandomTwo href="#" rel="noopener" />
-            <RandomOne href="#" rel="noopener" />
-            <RandomThree href="#" rel="noopener" />
-            <RandomFour href="#" rel="noopener" />
-          </Grid>
-          <Snapper>
-            <Arrows to="#logo1" className="prev">
-              <FaCaretLeft />
-            </Arrows>
-            <Arrows to="#logo3" className="next">
-              <FaCaretRight />
-            </Arrows>
-          </Snapper>
-        </Logo>
-        <Logo className="logo" id="logo3" tabIndex={0}>
-          <Grid>
-            <RandomThree href="#" rel="noopener" />
-            <RandomOne href="#" rel="noopener" />
-            <RandomFour href="#" rel="noopener" />
-            <RandomTwo href="#" rel="noopener" />
-          </Grid>
-          <Snapper>
-            <Arrows to="#logo2" className="prev">
-              <FaCaretLeft />
-            </Arrows>
-            <Arrows to="#logo4" className="next">
-              <FaCaretRight />
-            </Arrows>
-          </Snapper>
-        </Logo>
-        <Logo className="logo" id="logo4" tabIndex={0}>
-          <Grid>
-            <RandomFour href="#" rel="noopener" />
-            <RandomThree href="#" rel="noopener" />
-            <RandomTwo href="#" rel="noopener" />
-            <RandomOne href="#" rel="noopener" />
-          </Grid>
-          <Snapper>
-            <Arrows to="#logo3" className="prev">
-              <FaCaretLeft />
-            </Arrows>
-            <Arrows to="#logo1" className="next">
-              <FaCaretRight />
-            </Arrows>
-          </Snapper>
-        </Logo>
-      </Logos>
-      <Nav to="#logo1" />
-      <Nav to="#logo2" />
-      <Nav to="#logo3" />
-      <Nav to="#logo4" />
-    </Slider>
-  </Section>
-)
-
-export default LogoCarousel
+export default function LogoCarousel() {
+  const { imagecarousel } = useStaticQuery(graphql`
+    query {
+      imagecarousel: allSanityLogos {
+        nodes {
+          id
+        }
+      }
+    }
+  `)
+  const { nodes } = imagecarousel
+  return (
+    <>
+      {nodes.map(node => (
+        <Section id="carousels-logo" aria-label="Logo Gallery" key={node.id}>
+          <Slider>
+            <Logos className="logos">
+              <Logo className="logo" id="logo1" tabIndex={0}>
+                <Grid>
+                  <RandomOne href="#" rel="noopener" />
+                  <RandomTwo href="#" rel="noopener" />
+                  <RandomThree href="#" rel="noopener" />
+                  <RandomFour href="#" rel="noopener" />
+                </Grid>
+                <Snapper>
+                  <Arrows to="#logo4" className="prev">
+                    <FaCaretLeft />
+                  </Arrows>
+                  <Arrows to="#logo2" className="next">
+                    <FaCaretRight />
+                  </Arrows>
+                </Snapper>
+              </Logo>
+              <Logo className="logo" id="logo2" tabIndex={0}>
+                <Grid>
+                  <RandomTwo href="#" rel="noopener" />
+                  <RandomOne href="#" rel="noopener" />
+                  <RandomThree href="#" rel="noopener" />
+                  <RandomFour href="#" rel="noopener" />
+                </Grid>
+                <Snapper>
+                  <Arrows to="#logo1" className="prev">
+                    <FaCaretLeft />
+                  </Arrows>
+                  <Arrows to="#logo3" className="next">
+                    <FaCaretRight />
+                  </Arrows>
+                </Snapper>
+              </Logo>
+              <Logo className="logo" id="logo3" tabIndex={0}>
+                <Grid>
+                  <RandomThree href="#" rel="noopener" />
+                  <RandomOne href="#" rel="noopener" />
+                  <RandomFour href="#" rel="noopener" />
+                  <RandomTwo href="#" rel="noopener" />
+                </Grid>
+                <Snapper>
+                  <Arrows to="#logo2" className="prev">
+                    <FaCaretLeft />
+                  </Arrows>
+                  <Arrows to="#logo4" className="next">
+                    <FaCaretRight />
+                  </Arrows>
+                </Snapper>
+              </Logo>
+              <Logo className="logo" id="logo4" tabIndex={0}>
+                <Grid>
+                  <RandomFour href="#" rel="noopener" />
+                  <RandomThree href="#" rel="noopener" />
+                  <RandomTwo href="#" rel="noopener" />
+                  <RandomOne href="#" rel="noopener" />
+                </Grid>
+                <Snapper>
+                  <Arrows to="#logo3" className="prev">
+                    <FaCaretLeft />
+                  </Arrows>
+                  <Arrows to="#logo1" className="next">
+                    <FaCaretRight />
+                  </Arrows>
+                </Snapper>
+              </Logo>
+            </Logos>
+            <Nav to="#logo1" />
+            <Nav to="#logo2" />
+            <Nav to="#logo3" />
+            <Nav to="#logo4" />
+          </Slider>
+        </Section>
+      ))}
+    </>
+  )
+}

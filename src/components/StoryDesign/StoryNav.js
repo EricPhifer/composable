@@ -294,16 +294,16 @@ export default function StoryNav() {
             <MobileNav>
               <MobileList>
                 <MobileItem>
-                  <Link>Sections</Link>
+                  <Link to="#sections">Sections</Link>
                 </MobileItem>
                 <MobileItem>
-                  <Link>Accordions</Link>
+                  <Link to="#accordions">Accordions</Link>
                 </MobileItem>
                 <MobileItem>
-                  <Link>Carousels</Link>
+                  <Link to="#carousels">Carousels</Link>
                 </MobileItem>
                 <MobileItem>
-                  <Link>About</Link>
+                  <Link to="#about">About</Link>
                 </MobileItem>
               </MobileList>
               <Link to="/storybrand#contact" className="contact">

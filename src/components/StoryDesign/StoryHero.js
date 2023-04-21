@@ -2,14 +2,14 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 const Header = styled.header`
-  height: calc(100% - 10rem);
+  height: 100%;
   background-image: url(https://source.unsplash.com/random/?success);
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
   // Landscape view
   @media only screen and (max-height: 600px) {
-    height: calc(100% - 6rem);
+    height: calc(100% + 10rem);
   }
 `
 const Container = styled.div`

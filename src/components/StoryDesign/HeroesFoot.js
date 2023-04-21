@@ -7,7 +7,7 @@ const Footer = styled.footer`
   display: grid;
   grid-template-columns: repeat(3, minmax(auto, 1fr));
   position: absolute;
-  bottom: 0;
+  bottom: -10rem;
   background: var(--black);
   color: var(--white);
   .first,

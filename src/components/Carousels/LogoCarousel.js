@@ -45,6 +45,8 @@ const Logos = styled.ol`
 `
 
 const Logo = styled.li`
+  padding-top: 50vh;
+  margin-top: -50vh;
   width: 100%;
   position: relative;
   border-radius: 1rem;
@@ -57,27 +59,27 @@ const Snapper = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 0;
+  bottom: 0;
   display: flex;
   align-items: center;
   .prev svg {
-    top: 33%;
+    bottom: 9%;
     left: 0;
     @media only screen and (max-width: 900px) {
-      top: 31%;
+      bottom: 7%;
     }
     @media only screen and (max-width: 700px) {
-      top: 41%;
+      bottom: 15%;
     }
   }
   .next svg {
-    top: 33%;
+    bottom: 9%;
     right: 0;
     @media only screen and (max-width: 900px) {
-      top: 31%;
+      bottom: 7%;
     }
     @media only screen and (max-width: 700px) {
-      top: 41%;
+      bottom: 15%;
     }
   }
 `

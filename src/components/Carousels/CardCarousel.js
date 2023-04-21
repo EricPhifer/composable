@@ -44,11 +44,12 @@ const Cards = styled.div`
 `
 
 const Card = styled.li`
+  padding-top: 15vh;
+  margin-top: -15vh;
   width: 100%;
   height: 100%;
   scroll-snap-align: start;
   flex-shrink: 0;
-  border: 0.2rem double var(--gray);
   border-radius: 1rem;
   background: var(--white);
   transform-origin: center center;

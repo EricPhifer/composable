@@ -44,13 +44,14 @@ const Slides = styled.div`
 `
 
 const Slide = styled.li`
+  padding-top: 15vh;
+  margin-top: -15vh;
   width: 100%;
   height: 100%;
   margin-right: 5rem;
   scroll-snap-align: start;
   flex-shrink: 0;
   border-radius: 1rem;
-  background: var(--gray);
   transform-origin: center center;
   transform: scale(1);
   transition: transform 0.5s;
@@ -153,8 +154,10 @@ const RandomFour = styled.div`
 `
 
 const Content = styled.div`
-  width: 90%;
-  padding: 2rem 0;
+  width: 100%;
+  padding: 2rem;
+  background-color: var(--gray);
+  border-radius: 0 0 1rem 1rem;
   overflow-x: auto;
   @media only screen and (max-width: 500px) {
     height: 50%;

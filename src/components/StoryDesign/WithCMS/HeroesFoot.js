@@ -58,6 +58,9 @@ export default function HeroesFoot() {
       hero: allSanityHero {
         nodes {
           id
+          footerthree
+          footerotwo
+          footerone
         }
       }
     }
@@ -68,13 +71,13 @@ export default function HeroesFoot() {
       {nodes.map(node => (
         <Footer key={node.id}>
           <Three className="first">
-            <p>Third Solution</p>
+            <p>{node.footerone}</p>
           </Three>
           <Three className="second">
-            <p>Primary Solution Two</p>
+            <p>{node.footerotwo}</p>
           </Three>
           <Three>
-            <p>Most Important</p>
+            <p>{node.footerthree}</p>
           </Three>
         </Footer>
       ))}

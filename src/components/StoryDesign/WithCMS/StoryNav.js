@@ -241,6 +241,7 @@ const MobileItem = styled.li`
     }
   }
 `
+
 export default function StoryNav() {
   const { navigation } = useStaticQuery(graphql`
     query {

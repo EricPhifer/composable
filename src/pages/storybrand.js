@@ -16,11 +16,16 @@ import SectionLeftImg from '../components/Sections/SectionLeftImg'
 import SectionRightImg from '../components/Sections/SectionRightImg'
 // Section Components
 import SectionTopImg from '../components/Sections/SectionTopImg'
-import Seo from '../components/seo'
+// Gallery Components
+import FourColumnGallery from '../components/Galleries/FourColumnGallery'
+import ThreeColumnGallery from '../components/Galleries/ThreeColumnGallery'
+import TwoColumnGallery from '../components/Galleries/TwoColumnGallery'
 // Story Components
 import HerosFoot from '../components/StoryDesign/HeroesFoot'
 import StoryHero from '../components/StoryDesign/StoryHero'
 import StoryNav from '../components/StoryDesign/StoryNav'
+// SEO
+import Seo from '../components/seo'
 
 const Hero = styled.div`
   display: block;
@@ -74,6 +79,11 @@ const StoryBrand = () => (
       <SectionLeftImg />
       <SectionRightImg />
       <SectionTopImg />
+      <H2 id="galleries">Galleries</H2>
+      <HR />
+      <FourColumnGallery />
+      <ThreeColumnGallery />
+      <TwoColumnGallery />
       <H2 id="accordions">Accordions</H2>
       <HR />
       <StandardAccordion />
